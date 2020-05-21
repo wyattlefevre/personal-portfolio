@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="test">Wyatt LeFevre</h1>
+    <p>Full-Stack Web Developer</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
 }
 </script>
+
+<style scoped>
+.home {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+}
+h1 {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+.test {
+  color: purple;
+}
+
+</style>
+
