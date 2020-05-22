@@ -1,0 +1,14 @@
+Old Lace
+#FCE4D3
+
+Tan
+#E5C3BB
+
+Dark Slate Blue
+#466881
+
+Light Slate Gray
+#8195A8
+
+Lighter Slate gray
+#A8B2BE
