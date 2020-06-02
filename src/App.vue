@@ -19,20 +19,19 @@
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
-    {{windowHeight}}
     <router-view />
   </v-app>
 </template>
 
 <script>
+import {vueWindowSizeMixin} from 'vue-window-size';
+
 export default {
   name: 'App',
   components: {},
   computed: {
-    windowHeight () {
-      return window.innerHeight;
-    }
   },
+  mixins: [vueWindowSizeMixin],
 
   data: () => ({
   }),
