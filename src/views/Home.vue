@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <div style="height: 500px">500px</div> -->
     <div class="canvas">
       <div class="title">
         <div class="title-words">
@@ -9,7 +10,7 @@
         <v-btn color="primary">About Me</v-btn>
       </div>
     </div>
-    <v-toolbar color="primary" dark>
+    <!-- <v-toolbar color="primary" dark>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Title</v-toolbar-title>
       <template v-slot:extension>
@@ -20,7 +21,7 @@
           <v-tab>tab 3</v-tab>
         </v-tabs>
       </template>
-    </v-toolbar>
+    </v-toolbar> -->
     <div class="colors">
       <div class="color" style="background-color: #FCE4D3">Old Lace</div>
       <div class="color" style="background-color: #E5C3BB">Tan</div>
@@ -28,6 +29,7 @@
       <div class="color" style="background-color: #8195A8">Light Slate Gray</div>
       <div class="color" style="background-color: #A8B2BE">Lighter Slate gray</div>
     </div>
+    <div style="height: 2000px"></div>
   </div>
 </template>
 
