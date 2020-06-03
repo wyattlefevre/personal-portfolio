@@ -9,21 +9,42 @@
             <h2>Here are some more words about me</h2>
           </div>
         </v-slide-y-transition>
-        <v-btn color="primary">About Me</v-btn>
+        <v-btn color="primary" @click="goToAbout">About Me</v-btn>
       </div>
     </div>
-    <v-container fill-height fluid class="about-me">
-      <v-row align="center" justify="center">
-        <v-col cols="8">
-          <h1>
-            This is some text about me and a description which will be nice to have haha. This is some text about me and a description which will be nice
-            to have. This is some text about me and a description which will be nice to have. This is some text about me and a description which will
-            be nice to have. Yes.
-          </h1>
-        </v-col>
-      </v-row>
-    </v-container>
-    <div class=""></div>
+    <div class="about-me">
+      <v-container ma-0 pa-0 fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="8">
+            <v-row justify="center">
+              <v-col>
+                <h1>
+                  This is some text about me and a description which will be nice to have haha. This is some text about me and a description which
+                  will be nice to have. This is some text about me and a description which will be nice to have. This is some text about me and a
+                  description which will be nice to have. Yes.
+                </h1>
+              </v-col>
+            </v-row>
+            <v-row class="mt-4" justify="center">
+              <v-btn @click="goToExperience">Experience</v-btn>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
+    <div class="experience">
+      <h1>this is where I will talk about my experience and education</h1>
+    </div>
+    <div class="skills">
+      <h1>this is where I will talk about my skills</h1>
+    </div>
+    <div class="projects">
+      <h1>this is where I will list my projects</h1>
+    </div>
+    <div class="contact-me">
+      <h1>this is where I will list my contact info</h1>
+    </div>
+
     <!-- <div class="canvas-top">
       <v-parallax id="parallax" dark src="../assets/images/canvas.jpg" :height="windowHeight">
 
@@ -54,6 +75,27 @@ import { vueWindowSizeMixin } from 'vue-window-size';
 export default {
   name: 'Home',
   mixins: [vueWindowSizeMixin],
+  data() {
+    return {
+      projects: [
+        {
+          name: 'Project 1',
+          description: 'Description 1',
+          imagePath: '@/assets/images/project1.jpg',
+        },
+      ],
+    };
+  },
+  methods: {
+    goToAbout() {
+      console.log('hey');
+      this.$vuetify.goTo('.about-me');
+    },
+    goToExperience() {
+      console.log('heys');
+      this.$vuetify.goTo('.experience');
+    },
+  },
 };
 </script>
 
@@ -61,10 +103,27 @@ export default {
 .about-me {
   color: White;
   /* color: #8195A8; */
-  background-color: #A8B2BE;
+  background-color: #a8b2be;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+.experience {
+  min-height: 100vh;
+}
+.skills {
+  min-height: 100vh;
+  background-color: green;
+}
+.projects {
+  min-height: 100vh;
+  background-color: blue;
+}
+.contact-me {
+  min-height: 100vh;
+  background-color: pink;
+}
 .colors {
   display: flex;
 }
