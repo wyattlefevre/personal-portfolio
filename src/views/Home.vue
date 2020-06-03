@@ -3,25 +3,39 @@
     <!-- <div style="height: 500px">500px</div> -->
     <div class="canvas">
       <div class="title">
-        <div class="title-words">
-          <h1>Hi, I'm Wyatt LeFevre.</h1>
-          <h2>Here are some more words about me</h2>
-        </div>
+        <v-slide-y-transition>
+          <div class="title-words">
+            <h1>Hi, I'm Wyatt LeFevre.</h1>
+            <h2>Here are some more words about me</h2>
+          </div>
+        </v-slide-y-transition>
         <v-btn color="primary">About Me</v-btn>
       </div>
     </div>
-    <!-- <v-toolbar color="primary" dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>Title</v-toolbar-title>
-      <template v-slot:extension>
-        <v-tabs v-model="tab" align-with-title>
-          <v-tabs-slider color="accent"></v-tabs-slider>
-          <v-tab>tab 1</v-tab>
-          <v-tab>tab 2</v-tab>
-          <v-tab>tab 3</v-tab>
-        </v-tabs>
-      </template>
-    </v-toolbar> -->
+    <v-container fill-height fluid class="about-me">
+      <v-row align="center" justify="center">
+        <v-col cols="8">
+          <h1>
+            This is some text about me and a description which will be nice to have haha. This is some text about me and a description which will be nice
+            to have. This is some text about me and a description which will be nice to have. This is some text about me and a description which will
+            be nice to have. Yes.
+          </h1>
+        </v-col>
+      </v-row>
+    </v-container>
+    <div class=""></div>
+    <!-- <div class="canvas-top">
+      <v-parallax id="parallax" dark src="../assets/images/canvas.jpg" :height="windowHeight">
+
+        <v-row align="center" justify="center">
+          <v-col class="text-center" cols="12">
+            <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
+            <h4 class="subheading">Build your application today!</h4>
+          </v-col>
+        </v-row>
+      </v-parallax>
+    </div> -->
+
     <div class="colors">
       <div class="color" style="background-color: #FCE4D3">Old Lace</div>
       <div class="color" style="background-color: #E5C3BB">Tan</div>
@@ -35,13 +49,22 @@
 
 <script>
 // @ is an alias to /src
+import { vueWindowSizeMixin } from 'vue-window-size';
 
 export default {
   name: 'Home',
+  mixins: [vueWindowSizeMixin],
 };
 </script>
 
 <style scoped>
+.about-me {
+  color: White;
+  /* color: #8195A8; */
+  background-color: #A8B2BE;
+  height: 100vh;
+}
+
 .colors {
   display: flex;
 }
@@ -51,9 +74,11 @@ export default {
   color: black;
   text-shadow: 2px 2px 3px white;
 }
+
 .canvas {
   background-image: url('../assets/images/canvas.jpg');
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
   text-align: center;
   width: 100%;
