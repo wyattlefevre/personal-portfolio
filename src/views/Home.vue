@@ -2,22 +2,11 @@
   <div class="home">
     <div class="canvas">
       <div class="title">
-        <div class="title-words" data-aos="fade-right">
-          <h1 class="display-2 mb-4">Hi, I'm Wyatt LeFevre.</h1>
-          <h2 class="display-1 mb-5">I design and write software, and I love what I do.</h2>
+        <div class="title-words ml-2 mr-2" data-aos="fade-right">
+          <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">Hi, I'm Wyatt LeFevre.</h1>
+          <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">I design and write software, and I love what I do.</h2>
         </div>
-        <!-- <v-row justify="center" class="mb-6">
-          <v-card height="300px" width="300px">
-            <v-container>
-              <v-row>
-                <v-col>
-                  <v-img contain height="95%" src="@/assets/images/portrait.jpg"></v-img>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card>
-        </v-row> -->
-        <v-btn class="down-arrow" icon @click="goToAbout"><v-icon color="black" size="3.5em">mdi-chevron-down</v-icon></v-btn>
+        <v-btn icon @click="goToAbout"><v-icon class="down-arrow" color="black" size="3.5em">mdi-chevron-down</v-icon></v-btn>
       </div>
     </div>
     <div class="colors">
@@ -31,17 +20,25 @@
       <v-container ma-0 pa-0 fluid>
         <v-row align="center" justify="center">
           <v-col cols="8">
-            <v-row justify="center">
+            <v-row justify="center" class="mt-4">
               <v-col>
-                <p class="display-1" data-aos="fade-right">
+                <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
+                <p class="display-1 font-weight-black text-justify" data-aos="fade-right" v-if="$vuetify.breakpoint.smAndUp">
                   Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
                   require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
                   with an emphasis in software engineering at Brigham Young University in Provo, Utah.
                 </p>
+                <p class="headline font-weight-black " data-aos="fade-right" v-else>
+                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
+                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
+                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
+                </p>
+                {{ $vuetify.breakpoint.name }}
+                {{ $vuetify.breakpoint.smAndUp }}
               </v-col>
             </v-row>
-            <v-row class="mt-4" justify="center">
-              <v-btn depressed color="black" class="white--text" @click="goToExperience">Experience</v-btn>
+            <v-row class="mb-4" justify="center">
+              <h1 class="display-1 font-weight-black mb-4" id="special-button-1" @click="goToExperience">Experience</h1>
             </v-row>
           </v-col>
         </v-row>
@@ -86,17 +83,36 @@
       </v-container>
     </div>
     <div class="skills">
-      <v-row>
-        <v-col>
-          
-        </v-col>
-      </v-row>
+        <v-row justify="center" align="center" style="background-color: black">
+          <v-col style="background-color: white">
+            <h1>Test</h1>
+          </v-col>
+          <v-col style="background-color: blue">
+            <h1>Test</h1>
+          </v-col>
+        </v-row>
+        <!-- <v-row justify="center" align="center">
+          <v-col>
+            <v-row>
+              <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">skills</h1>
+            </v-row>
+            <v-row>
+              <v-col v-for="s in skills" :key="s.name" sm="8" xs="10" md="6" lg="3">
+                <v-img :src="s.iconSrc" height="150px" contain></v-img>
+                <h1>{{ s.name }}</h1>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row> -->
     </div>
     <div class="projects">
       <h1>this is where I will list my projects</h1>
     </div>
     <div class="contact-me">
       <h1>this is where I will list my contact info</h1>
+    </div>
+    <div class="footer">
+      <p>Many of the icons i use are from <a href="https://icons8.com/">icons8.com</a></p>
     </div>
     <div style="height: 2000px"></div>
   </div>
@@ -116,19 +132,59 @@ export default {
         {
           name: 'Project 1',
           description: 'Description 1',
-          imagePath: '@/assets/images/project1.jpg',
+          imagePath: '../assets/images/project1.jpg',
         },
       ],
       skills: [
         {
           name: 'html',
-          iconSrc: '',
+          iconSrc: require('../assets/images/icons/html.png'),
         },
         {
           name: 'css',
-          iconSrc: '',
+          iconSrc: require('../assets/images/icons/css.png'),
         },
-      ]
+        {
+          name: 'asp.net',
+          iconSrc: require('../assets/images/icons/aspnet.png'),
+        },
+        {
+          name: 'bootstrap',
+          iconSrc: require('../assets/images/icons/bootstrap.png'),
+        },
+        {
+          name: 'C++',
+          iconSrc: require('../assets/images/icons/c++.png'),
+        },
+        {
+          name: 'C#',
+          iconSrc: require('../assets/images/icons/csharp.png'),
+        },
+        {
+          name: 'git',
+          iconSrc: require('../assets/images/icons/git.png'),
+        },
+        {
+          name: 'javascript',
+          iconSrc: require('../assets/images/icons/javascript.png'),
+        },
+        {
+          name: 'mongodb',
+          iconSrc: require('../assets/images/icons/mongodb.png'),
+        },
+        {
+          name: 'mysql',
+          iconSrc: require('../assets/images/icons/mysql.png'),
+        },
+        {
+          name: 'vue',
+          iconSrc: require('../assets/images/icons/vue.png'),
+        },
+        {
+          name: 'vuetify',
+          iconSrc: require('../assets/images/icons/vuetify.png'),
+        },
+      ],
     };
   },
   mounted() {},
@@ -147,7 +203,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 
 #B5CAD2
 #9BB6C2
@@ -155,12 +211,17 @@ export default {
 #6C8892
 #ACB3B8 
 */
+$base-color: #dce3e4;
+$base-color-2: #9bb6c2;
 
+.down-arrow:hover {
+  color: white;
+}
 #about-me {
   color: black;
   /* color: #8195A8; */
-  background-color: #dce3e4;
-  height: 100vh;
+  background-color: $base-color;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,9 +229,19 @@ export default {
 #experience {
   min-height: 100vh;
 }
+
+#special-button-1 {
+  cursor: pointer;
+}
+#special-button-1:hover {
+  color: white;
+}
+
 .skills {
+  background-color: $base-color;
   min-height: 100vh;
-  background-color: #ACB3B8;
+  display: flex;
+  align-items: center;
 }
 .projects {
   min-height: 100vh;
@@ -184,7 +255,7 @@ export default {
   display: flex;
 }
 .color {
-  width: 100px;
+  width: 70px;
   height: 100px;
   color: black;
   text-shadow: 2px 2px 3px white;
