@@ -3,10 +3,16 @@
     <div class="canvas">
       <div class="title">
         <div class="title-words ml-2 mr-2" data-aos="fade-right">
-          <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">Hi, I'm Wyatt LeFevre.</h1>
-          <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">I design and write software, and I love what I do.</h2>
+          <h1
+            :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']"
+          >Hi, I'm Wyatt LeFevre.</h1>
+          <h2
+            :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']"
+          >I design and write software, and I love what I do.</h2>
         </div>
-        <v-btn icon @click="goToAbout"><v-icon class="down-arrow" color="black" size="3.5em">mdi-chevron-down</v-icon></v-btn>
+        <v-btn icon @click="goToAbout">
+          <v-icon class="down-arrow" color="black" size="3.5em">mdi-chevron-down</v-icon>
+        </v-btn>
       </div>
     </div>
     <div class="colors">
@@ -23,12 +29,16 @@
             <v-row justify="center" class="mt-4">
               <v-col>
                 <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
-                <p class="display-1 font-weight-black text-justify" data-aos="fade-right" v-if="$vuetify.breakpoint.smAndUp">
+                <p
+                  class="display-1 font-weight-black text-justify"
+                  data-aos="fade-right"
+                  v-if="$vuetify.breakpoint.smAndUp"
+                >
                   Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
                   require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
                   with an emphasis in software engineering at Brigham Young University in Provo, Utah.
                 </p>
-                <p class="headline font-weight-black " data-aos="fade-right" v-else>
+                <p class="headline font-weight-black" data-aos="fade-right" v-else>
                   Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
                   require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
                   with an emphasis in software engineering at Brigham Young University in Provo, Utah.
@@ -38,7 +48,11 @@
               </v-col>
             </v-row>
             <v-row class="mb-4" justify="center">
-              <h1 class="display-1 font-weight-black mb-4" id="special-button-1" @click="goToExperience">Experience</h1>
+              <h1
+                class="display-1 font-weight-black mb-4"
+                id="special-button-1"
+                @click="goToExperience"
+              >Experience</h1>
             </v-row>
           </v-col>
         </v-row>
@@ -61,9 +75,9 @@
                 <v-spacer></v-spacer>
                 <span>Current Student</span>
               </v-row>
-              <v-row class="headline">
-                Bachelor of Computer Science: Software Engineering, Expected Graduation April 2022
-              </v-row>
+              <v-row
+                class="headline"
+              >Bachelor of Computer Science: Software Engineering, Expected Graduation April 2022</v-row>
             </div>
             <div id="experience-experience">
               <v-row>
@@ -74,36 +88,36 @@
                 <v-spacer></v-spacer>
                 <span>Current Student</span>
               </v-row>
-              <v-row class="headline">
-                Bachelor of Computer Science: Software Engineering, Expected Graduation April 2022
-              </v-row>
+              <v-row
+                class="headline"
+              >Bachelor of Computer Science: Software Engineering, Expected Graduation April 2022</v-row>
             </div>
           </v-col>
         </v-row>
+        <v-row>
+          <v-btn @click="goToSkills">Skills</v-btn>
+        </v-row>
       </v-container>
     </div>
-    <div class="skills">
-        <v-row justify="center" align="center" style="background-color: black">
-          <v-col style="background-color: white">
-            <h1>Test</h1>
-          </v-col>
-          <v-col style="background-color: blue">
-            <h1>Test</h1>
+    <div class="skills pa-12">
+      <h1 class="display-4 text-center font-weight-black pb-8">Skills</h1>
+      <div class="icons">
+        <v-row justify="center" align="center">
+          <v-col
+            v-for="s in skills"
+            :key="s.name"
+            sm="6"
+            cols="10"
+            md="5"
+            lg="3"
+            class="text-center"
+            :data-aos="s.transition"
+          >
+            <img :src="s.iconSrc" height="250px" />
+            <h1 class="display-1" >{{ s.name }}</h1>
           </v-col>
         </v-row>
-        <!-- <v-row justify="center" align="center">
-          <v-col>
-            <v-row>
-              <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">skills</h1>
-            </v-row>
-            <v-row>
-              <v-col v-for="s in skills" :key="s.name" sm="8" xs="10" md="6" lg="3">
-                <v-img :src="s.iconSrc" height="150px" contain></v-img>
-                <h1>{{ s.name }}</h1>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row> -->
+      </div>
     </div>
     <div class="projects">
       <h1>this is where I will list my projects</h1>
@@ -112,7 +126,10 @@
       <h1>this is where I will list my contact info</h1>
     </div>
     <div class="footer">
-      <p>Many of the icons i use are from <a href="https://icons8.com/">icons8.com</a></p>
+      <p>
+        Many of the icons i use are from
+        <a href="https://icons8.com/">icons8.com</a>
+      </p>
     </div>
     <div style="height: 2000px"></div>
   </div>
@@ -120,86 +137,102 @@
 
 <script>
 // @ is an alias to /src
-import { vueWindowSizeMixin } from 'vue-window-size';
+import { vueWindowSizeMixin } from "vue-window-size";
 
 export default {
-  name: 'Home',
+  name: "Home",
   mixins: [vueWindowSizeMixin],
   data() {
     return {
       showAbout: false,
       projects: [
         {
-          name: 'Project 1',
-          description: 'Description 1',
-          imagePath: '../assets/images/project1.jpg',
-        },
+          name: "Project 1",
+          description: "Description 1",
+          imagePath: "../assets/images/project1.jpg"
+        }
       ],
       skills: [
         {
-          name: 'html',
-          iconSrc: require('../assets/images/icons/html.png'),
+          name: "html",
+          iconSrc: require("../assets/images/icons/html.png"),
+          transition: "fade-up"
         },
         {
-          name: 'css',
-          iconSrc: require('../assets/images/icons/css.png'),
+          name: "css",
+          iconSrc: require("../assets/images/icons/css.png"),
+          transition: "fade-down"
         },
         {
-          name: 'asp.net',
-          iconSrc: require('../assets/images/icons/aspnet.png'),
+          name: "asp.net",
+          iconSrc: require("../assets/images/icons/aspnet.png"),
+          transition: "fade-right"
         },
         {
-          name: 'bootstrap',
-          iconSrc: require('../assets/images/icons/bootstrap.png'),
+          name: "bootstrap",
+          iconSrc: require("../assets/images/icons/bootstrap.png"),
+          transition: "fade-left"
         },
         {
-          name: 'C++',
-          iconSrc: require('../assets/images/icons/c++.png'),
+          name: "C++",
+          iconSrc: require("../assets/images/icons/c++.png"),
+          transition: "fade-up-left"
         },
         {
-          name: 'C#',
-          iconSrc: require('../assets/images/icons/csharp.png'),
+          name: "C#",
+          iconSrc: require("../assets/images/icons/csharp.png"),
+          transition: "fade-down-right"
         },
         {
-          name: 'git',
-          iconSrc: require('../assets/images/icons/git.png'),
+          name: "git",
+          iconSrc: require("../assets/images/icons/git.png"),
+          transition: "fade-up-right"
         },
         {
-          name: 'javascript',
-          iconSrc: require('../assets/images/icons/javascript.png'),
+          name: "javascript",
+          iconSrc: require("../assets/images/icons/javascript.png"),
+          transition: "fade-down-left"
         },
         {
-          name: 'mongodb',
-          iconSrc: require('../assets/images/icons/mongodb.png'),
+          name: "mongodb",
+          iconSrc: require("../assets/images/icons/mongodb.png"),
+          transition: "zoom-in-up"
         },
         {
-          name: 'mysql',
-          iconSrc: require('../assets/images/icons/mysql.png'),
+          name: "mysql",
+          iconSrc: require("../assets/images/icons/mysql.png"),
+          transition: "zoom-out-down"
         },
         {
-          name: 'vue',
-          iconSrc: require('../assets/images/icons/vue.png'),
+          name: "vue",
+          iconSrc: require("../assets/images/icons/vue.png"),
+          transition: "zoom-in-right"
         },
         {
-          name: 'vuetify',
-          iconSrc: require('../assets/images/icons/vuetify.png'),
-        },
-      ],
+          name: "vuetify",
+          iconSrc: require("../assets/images/icons/vuetify.png"),
+          transition: "zoom-out-left"
+        }
+      ]
     };
   },
   mounted() {},
 
   methods: {
     goToAbout() {
-      console.log('hey');
-      this.$vuetify.goTo('#about-me');
+      console.log("hey");
+      this.$vuetify.goTo("#about-me");
       this.showAbout = true;
     },
     goToExperience() {
-      console.log('heys');
-      this.$vuetify.goTo('#experience');
+      console.log("heys");
+      this.$vuetify.goTo("#experience");
     },
-  },
+    goToSkills() {
+      console.log("heys");
+      this.$vuetify.goTo(".skills");
+    }
+  }
 };
 </script>
 
@@ -211,7 +244,7 @@ export default {
 #6C8892
 #ACB3B8 
 */
-$base-color: #dce3e4;
+$base-color: white;
 $base-color-2: #9bb6c2;
 
 .down-arrow:hover {
@@ -234,14 +267,19 @@ $base-color-2: #9bb6c2;
   cursor: pointer;
 }
 #special-button-1:hover {
-  color: white;
+  color: $base-color-2;
 }
 
 .skills {
-  background-color: $base-color;
-  min-height: 100vh;
+  background-color: black;
+  color: white;
+  // min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.icons {
+  display: flex;
 }
 .projects {
   min-height: 100vh;
@@ -262,7 +300,7 @@ $base-color-2: #9bb6c2;
 }
 
 .canvas {
-  background-image: url('../assets/images/canvas.jpg');
+  background-image: url("../assets/images/canvas.jpg");
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -272,7 +310,7 @@ $base-color-2: #9bb6c2;
 }
 @media screen and (min-width: 1550px) {
   .canvas {
-    background-image: url('../assets/images/canvas-wide.jpg');
+    background-image: url("../assets/images/canvas-wide.jpg");
   }
 }
 

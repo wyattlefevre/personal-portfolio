@@ -1,6 +1,6 @@
 <template>
   <v-app class="app">
-    <v-app-bar flat fixed color="#FFFA" inverted-scroll :scroll-threshold="windowHeight-20">
+    <!-- <v-app-bar flat fixed color="#FFFA" inverted-scroll :scroll-threshold="windowHeight-20">
       <v-app-bar-nav-icon color="black"></v-app-bar-nav-icon>
 
       <v-toolbar-title style="color: black">Title</v-toolbar-title>
@@ -18,7 +18,7 @@
       <v-btn icon>
         <v-icon color="black">mdi-dots-vertical</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-app-bar> -->
     <router-view />
   </v-app>
 </template>
