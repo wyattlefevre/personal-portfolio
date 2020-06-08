@@ -51,13 +51,13 @@
         <v-row dense>
           <v-col v-for="e in experiences" :key="e.name" cols="12" :data-aos="e.transition">
             <div>
-              <v-card>
+              <v-card color="black">
                 <div class="d-flex flex-no-wrap justify-space-between pa-8">
                   <div>
-                    <v-card-title class="headline" v-text="e.name"></v-card-title>
+                    <v-card-title class="headline white--text" v-text="e.name"></v-card-title>
                     <v-card-subtitle v-text="e.description"></v-card-subtitle>
                   </div>
-                  <v-avatar class="ma-4" size="125" tile>
+                  <v-avatar class="ma-4" size="150" tile color="white">
                     <v-img :src="e.imgSrc"></v-img>
                   </v-avatar>
                 </div>
