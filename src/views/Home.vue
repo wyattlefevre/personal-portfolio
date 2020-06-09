@@ -3,8 +3,12 @@
     <div class="canvas">
       <div class="title">
         <div class="title-words ml-2 mr-2" data-aos="fade-right">
-          <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">Hi, I'm Wyatt LeFevre.</h1>
-          <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">I design and write software, and I love what I do.</h2>
+          <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">
+            Hi, I'm Wyatt LeFevre.
+          </h1>
+          <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">
+            I design and write software, and I love what I do.
+          </h2>
         </div>
         <v-btn icon @click="goToAbout">
           <v-icon class="down-arrow" color="black" size="3.5em">mdi-chevron-down</v-icon>
@@ -25,15 +29,21 @@
             <v-row justify="center" class="mt-4">
               <v-col>
                 <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
-                <p class="display-1 font-weight-black text-justify" data-aos="fade-right" v-if="$vuetify.breakpoint.smAndUp">
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
-                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
-                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
+                <p
+                  class="display-1 font-weight-black text-justify"
+                  data-aos="fade-right"
+                  v-if="$vuetify.breakpoint.smAndUp"
+                >
+                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled
+                  with difficult problems that require creative solutions. I currently work in a team as a full stack
+                  web developer and I am pursuing a degree in Computer Science with an emphasis in software engineering
+                  at Brigham Young University in Provo, Utah.
                 </p>
                 <p class="headline font-weight-black" data-aos="fade-right" v-else>
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
-                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
-                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
+                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled
+                  with difficult problems that require creative solutions. I currently work in a team as a full stack
+                  web developer and I am pursuing a degree in Computer Science with an emphasis in software engineering
+                  at Brigham Young University in Provo, Utah.
                 </p>
                 {{ $vuetify.breakpoint.name }}
                 {{ $vuetify.breakpoint.smAndUp }}
@@ -47,17 +57,17 @@
       </v-container>
     </div>
     <div id="experience">
-      <v-container>
+      <v-container style="padding-top: 48px">
         <v-row dense>
           <v-col v-for="e in experiences" :key="e.name" cols="12" :data-aos="e.transition">
             <div>
-              <v-card color="black">
-                <div class="d-flex flex-no-wrap justify-space-between pa-8">
+              <v-card class="ma-6">
+                <div class="d-flex flex-no-wrap justify-space-between align-center pa-8">
                   <div>
-                    <v-card-title class="headline white--text" v-text="e.name"></v-card-title>
-                    <v-card-subtitle v-text="e.description"></v-card-subtitle>
+                    <v-card-title class="display-1" v-text="e.name"></v-card-title>
+                    <v-card-text class="headline" v-text="e.description"></v-card-text>
                   </div>
-                  <v-avatar class="ma-4" size="150" tile color="white">
+                  <v-avatar class="ma-4" size="150" tile>
                     <v-img :src="e.imgSrc"></v-img>
                   </v-avatar>
                 </div>
@@ -71,7 +81,16 @@
       <h1 class="display-4 text-center font-weight-black pb-8">Skills</h1>
       <div class="icons">
         <v-row justify="center" align="center">
-          <v-col v-for="s in skills" :key="s.name" sm="6" cols="10" md="5" lg="3" class="text-center" :data-aos="s.transition">
+          <v-col
+            v-for="s in skills"
+            :key="s.name"
+            sm="6"
+            cols="10"
+            md="5"
+            lg="3"
+            class="text-center"
+            :data-aos="s.transition"
+          >
             <img :src="s.iconSrc" height="250px" />
             <h1 class="display-1">{{ s.name }}</h1>
           </v-col>
@@ -114,7 +133,8 @@ export default {
       experiences: [
         {
           name: 'Brigham Young University',
-          description: 'this is what i did',
+          description:
+            'this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did',
           imgSrc: require('../assets/images/BYU.png'),
           transition: 'fade-right',
         },
@@ -126,6 +146,12 @@ export default {
         },
         {
           name: 'a thing I did again',
+          description: 'this is what i did',
+          imgSrc: '',
+          transition: 'fade-right',
+        },
+        {
+          name: 'the last one',
           description: 'this is what i did',
           imgSrc: '',
           transition: 'fade-right',
