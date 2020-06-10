@@ -10,8 +10,9 @@
             I design and write software, and I love what I do.
           </h2>
         </div>
+
         <v-btn icon @click="goToAbout">
-          <v-icon class="down-arrow" color="black" size="3.5em">mdi-chevron-down</v-icon>
+          <v-icon class="down-arrow" color="black" size="4.5em">mdi-chevron-down</v-icon>
         </v-btn>
       </div>
     </div>
@@ -29,21 +30,15 @@
             <v-row justify="center" class="mt-4">
               <v-col>
                 <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
-                <p
-                  class="display-1 font-weight-black text-justify"
-                  data-aos="fade-right"
-                  v-if="$vuetify.breakpoint.smAndUp"
-                >
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled
-                  with difficult problems that require creative solutions. I currently work in a team as a full stack
-                  web developer and I am pursuing a degree in Computer Science with an emphasis in software engineering
-                  at Brigham Young University in Provo, Utah.
+                <p class="display-1 font-weight-black text-justify" data-aos="fade-right" v-if="$vuetify.breakpoint.smAndUp">
+                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
+                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
+                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
                 </p>
                 <p class="headline font-weight-black" data-aos="fade-right" v-else>
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled
-                  with difficult problems that require creative solutions. I currently work in a team as a full stack
-                  web developer and I am pursuing a degree in Computer Science with an emphasis in software engineering
-                  at Brigham Young University in Provo, Utah.
+                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
+                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
+                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
                 </p>
                 {{ $vuetify.breakpoint.name }}
                 {{ $vuetify.breakpoint.smAndUp }}
@@ -56,12 +51,13 @@
         </v-row>
       </v-container>
     </div>
-    <div id="experience">
-      <v-container style="padding-top: 48px">
-        <v-row dense>
+    <div id="experience" style="padding-top: 96px">
+      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Experience</h1>
+      <v-container>
+        <v-row>
           <v-col v-for="e in experiences" :key="e.name" cols="12" :data-aos="e.transition">
             <div>
-              <v-card class="ma-6">
+              <v-card class="ma-2" color="#202029" dark>
                 <div class="d-flex flex-no-wrap justify-space-between align-center pa-8">
                   <div>
                     <v-card-title class="display-1" v-text="e.name"></v-card-title>
@@ -75,30 +71,57 @@
             </div>
           </v-col>
         </v-row>
+        <v-row justify="center" class="pt-8 pb-12">
+          <v-btn icon @click="goToSkills">
+            <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
+          </v-btn>
+        </v-row>
       </v-container>
     </div>
     <div class="skills pa-12">
-      <h1 class="display-4 text-center font-weight-black pb-8">Skills</h1>
-      <div class="icons">
+      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Skills</h1>
+      <div class="icons pb-12">
         <v-row justify="center" align="center">
-          <v-col
-            v-for="s in skills"
-            :key="s.name"
-            sm="6"
-            cols="10"
-            md="5"
-            lg="3"
-            class="text-center"
-            :data-aos="s.transition"
-          >
-            <img :src="s.iconSrc" height="250px" />
+          <v-col v-for="s in skills" :key="s.name" sm="6" cols="10" md="5" lg="3" class="text-center" :data-aos="s.transition">
+            <img :src="s.iconSrc" height="200px" />
             <h1 class="display-1">{{ s.name }}</h1>
           </v-col>
         </v-row>
       </div>
+    <div class="page-space "></div>
+
+      <v-row justify="center">
+        <v-btn icon @click="goToProjects">
+          <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
+        </v-btn>
+      </v-row>
     </div>
-    <div class="projects">
-      <h1>this is where I will list my projects</h1>
+    <div class="projects pa-12">
+      <v-container fill>
+        <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Projects & Portfolio</h1>
+        <v-row>
+          <v-col v-for="e in experiences" :key="e.name" cols="6" :data-aos="e.transition">
+            <div>
+              <v-card class="ma-1" dark>
+                <div class="d-flex flex-no-wrap justify-space-between align-center pa-8">
+                  <div>
+                    <v-card-title class="headline white--text" v-text="e.name"></v-card-title>
+                    <v-card-text class="body-1 white--text" v-text="e.description"></v-card-text>
+                  </div>
+                  <v-avatar class="ma-4" size="150" tile>
+                    <v-img :src="e.imgSrc"></v-img>
+                  </v-avatar>
+                </div>
+              </v-card>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row justify="center" class="pa-12">
+          <v-btn icon @click="goToSkills">
+            <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
+          </v-btn>
+        </v-row>
+      </v-container>
     </div>
     <div class="contact-me">
       <h1>this is where I will list my contact info</h1>
@@ -225,17 +248,17 @@ export default {
 
   methods: {
     goToAbout() {
-      console.log('hey');
       this.$vuetify.goTo('#about-me');
       this.showAbout = true;
     },
     goToExperience() {
-      console.log('heys');
       this.$vuetify.goTo('#experience');
     },
     goToSkills() {
-      console.log('heys');
       this.$vuetify.goTo('.skills');
+    },
+    goToProjects() {
+      this.$vuetify.goTo('.projects');
     },
   },
 };
@@ -256,9 +279,9 @@ $base-color-2: #9bb6c2;
   color: white;
 }
 #about-me {
-  color: black;
+  color: white;
   /* color: #8195A8; */
-  background-color: $base-color;
+  background-color: black;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -266,6 +289,8 @@ $base-color-2: #9bb6c2;
 }
 #experience {
   min-height: 100vh;
+  background-color: black;
+  color: white;
 }
 
 #special-button-1 {
@@ -287,8 +312,9 @@ $base-color-2: #9bb6c2;
   display: flex;
 }
 .projects {
+  color: white;
   min-height: 100vh;
-  background-color: blue;
+  background-color: black;
 }
 .contact-me {
   min-height: 100vh;
