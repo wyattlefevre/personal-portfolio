@@ -1,6 +1,6 @@
 <template>
   <v-app class="app">
-    <v-app-bar flat fixed dense color="#000" inverted-scroll :scroll-threshold="windowHeight-20">
+    <v-app-bar flat fixed dense color="#1f1f1f" inverted-scroll :scroll-threshold="windowHeight-20">
       <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
 
       <v-toolbar-title style="color: white">Title</v-toolbar-title>

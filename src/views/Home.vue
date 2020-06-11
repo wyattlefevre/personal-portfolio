@@ -10,19 +10,9 @@
             I design and write software, and I love what I do.
           </h2>
         </div>
-
-        <v-btn icon @click="goToAbout">
-          <v-icon class="down-arrow" color="black" size="4.5em">mdi-chevron-down</v-icon>
-        </v-btn>
+        <arrow-button color="#000" :hover="colors.accentColor" @button-clicked="goToAbout"> </arrow-button>
       </div>
     </div>
-    <!-- <div class="colors">
-      <div class="color" style="background-color: #B5CAD2">#B5CAD2</div>
-      <div class="color" style="background-color: #9BB6C2">#9BB6C2</div>
-      <div class="color" style="background-color: #DCE3E4">#DCE3E4</div>
-      <div class="color" style="background-color: #6C8892">#6C8892</div>
-      <div class="color" style="background-color: #ACB3B8">#ACB3B8</div>
-    </div> -->
     <div id="about-me">
       <v-container ma-0 pa-0 fluid>
         <v-row align="center" justify="center">
@@ -53,30 +43,8 @@
     </div>
     <div id="experience" style="padding-top: 96px">
       <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Experience</h1>
-      <v-container>
-        <v-row>
-          <v-col v-for="e in experiences" :key="e.name" cols="12" :data-aos="e.transition">
-            <div>
-              <v-card class="ma-2" color="#202029" dark>
-                <div class="d-flex flex-no-wrap justify-space-between align-center pa-8">
-                  <div>
-                    <v-card-title class="display-1" v-text="e.name"></v-card-title>
-                    <v-card-text class="headline" v-text="e.description"></v-card-text>
-                  </div>
-                  <v-avatar class="ma-4" size="150" tile>
-                    <v-img :src="e.imgSrc"></v-img>
-                  </v-avatar>
-                </div>
-              </v-card>
-            </div>
-          </v-col>
-        </v-row>
-        <v-row justify="center" class="pt-8 pb-12">
-          <v-btn icon @click="goToSkills">
-            <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
-          </v-btn>
-        </v-row>
-      </v-container>
+      <display-cards :items="experiences" colorAll="#1d1d1d" cols="12"></display-cards>
+      <arrow-button color="#FFF" :hover="colors.accentColor" @button-clicked="goToSkills"> </arrow-button>
     </div>
     <div class="skills pa-12">
       <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Skills</h1>
@@ -88,40 +56,13 @@
           </v-col>
         </v-row>
       </div>
-    <div class="page-space "></div>
-
-      <v-row justify="center">
-        <v-btn icon @click="goToProjects">
-          <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
-        </v-btn>
-      </v-row>
+      <div class="page-space "></div>
+      <arrow-button color="#FFF" :hover="colors.accentColor" @button-clicked="goToProjects"> </arrow-button>
     </div>
     <div class="projects pa-12">
-      <v-container fill>
-        <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Projects & Portfolio</h1>
-        <v-row>
-          <v-col v-for="e in experiences" :key="e.name" cols="6" :data-aos="e.transition">
-            <div>
-              <v-card class="ma-1" dark>
-                <div class="d-flex flex-no-wrap justify-space-between align-center pa-8">
-                  <div>
-                    <v-card-title class="headline white--text" v-text="e.name"></v-card-title>
-                    <v-card-text class="body-1 white--text" v-text="e.description"></v-card-text>
-                  </div>
-                  <v-avatar class="ma-4" size="150" tile>
-                    <v-img :src="e.imgSrc"></v-img>
-                  </v-avatar>
-                </div>
-              </v-card>
-            </div>
-          </v-col>
-        </v-row>
-        <v-row justify="center" class="pa-12">
-          <v-btn icon @click="goToSkills">
-            <v-icon class="down-arrow" color="white" size="4.5em">mdi-chevron-down</v-icon>
-          </v-btn>
-        </v-row>
-      </v-container>
+      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Projects & Portfolio</h1>
+      <display-cards :items="projects" cols="6"></display-cards>
+      <arrow-button class="pa-12" color="#FFF" :hover="colors.accentColor" @button-clicked="goToContact"> </arrow-button>
     </div>
     <div class="contact-me">
       <h1>this is where I will list my contact info</h1>
@@ -132,17 +73,22 @@
         <a href="https://icons8.com/">icons8.com</a>
       </p>
     </div>
-    <div style="height: 2000px"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import { vueWindowSizeMixin } from 'vue-window-size';
+import ArrowButton from '../components/ArrowButton';
+import DisplayCards from '../components/DisplayCards';
 
 export default {
   name: 'Home',
   mixins: [vueWindowSizeMixin],
+  components: {
+    'arrow-button': ArrowButton,
+    'display-cards': DisplayCards,
+  },
   data() {
     return {
       showAbout: false,
@@ -150,7 +96,30 @@ export default {
         {
           name: 'Project 1',
           description: 'Description 1',
-          imagePath: '../assets/images/project1.jpg',
+          imgSrc: require('../assets/images/project1.jpg'),
+          transition: 'fade-left',
+          color: '#bb86fc'
+        },
+        {
+          name: 'Project 1',
+          description: 'Description 1',
+          imgSrc: require('../assets/images/project1.jpg'),
+          transition: 'fade-up',
+          color: 'red'
+        },
+        {
+          name: 'Project 1',
+          description: 'Description 1',
+          imgSrc: require('../assets/images/project1.jpg'),
+          transition: 'fade-up',
+          color: 'purple'
+        },
+        {
+          name: 'Project 1',
+          description: 'Description 1',
+          imgSrc: require('../assets/images/project1.jpg'),
+          transition: 'fade-left',
+          color: 'yellow'
         },
       ],
       experiences: [
@@ -242,6 +211,9 @@ export default {
           transition: 'zoom-out-left',
         },
       ],
+      colors: {
+        accentColor: '#bb86fc',
+      },
     };
   },
   mounted() {},
@@ -260,28 +232,28 @@ export default {
     goToProjects() {
       this.$vuetify.goTo('.projects');
     },
+    goToContact() {
+      this.$vuetify.goTo('.contact-me');
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-/* 
-#B5CAD2
-#9BB6C2
-#DCE3E4
-#6C8892
-#ACB3B8 
-*/
-$base-color: white;
-$base-color-2: #9bb6c2;
+//Colors:
+$background-main-color: #121212;
+$background-secondary-color: #000;
+$card-color: #1d1d1d;
+$card-color-light: #1f1f1f;
+$accent-color: #bb86fc;
 
 .down-arrow:hover {
-  color: white;
+  background-color: $accent-color;
 }
 #about-me {
   color: white;
   /* color: #8195A8; */
-  background-color: black;
+  background-color: $background-main-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -289,7 +261,7 @@ $base-color-2: #9bb6c2;
 }
 #experience {
   min-height: 100vh;
-  background-color: black;
+  background-color: $background-main-color;
   color: white;
 }
 
@@ -297,11 +269,11 @@ $base-color-2: #9bb6c2;
   cursor: pointer;
 }
 #special-button-1:hover {
-  color: $base-color-2;
+  color: $accent-color;
 }
 
 .skills {
-  background-color: black;
+  background-color: $background-main-color;
   color: white;
   // min-height: 100vh;
   display: flex;
@@ -314,11 +286,11 @@ $base-color-2: #9bb6c2;
 .projects {
   color: white;
   min-height: 100vh;
-  background-color: black;
+  background-color: $background-main-color;
 }
 .contact-me {
   min-height: 100vh;
-  background-color: pink;
+  background-color: $background-secondary-color;
 }
 .colors {
   display: flex;
