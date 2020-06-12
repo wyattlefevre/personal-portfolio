@@ -21,7 +21,7 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed bottom temporary dark color="black">
       <v-list nav dense>
-        <v-list-item-group v-model="group" active-class="white--text">
+        <!-- <v-list-item-group v-model="group" active-class="white--text"> -->
           <v-list-item @click="goToAbout">
             <v-list-item-title>About Me</v-list-item-title>
           </v-list-item>
@@ -41,7 +41,7 @@
           <v-list-item @click="goToContact">
             <v-list-item-title>Contact Me</v-list-item-title>
           </v-list-item>
-        </v-list-item-group>
+        <!-- </v-list-item-group> -->
       </v-list>
     </v-navigation-drawer>
 
@@ -271,23 +271,25 @@ export default {
   methods: {
     goToAbout() {
       this.$vuetify.goTo('#about-me');
-      console.log('register');
+      this.drawer = false;
     },
     goToExperience() {
       this.$vuetify.goTo('#experience');
-      console.log('register');
+      this.drawer = false;
+
     },
     goToSkills() {
       this.$vuetify.goTo('.skills');
-      console.log('register');
+      this.drawer = false;
     },
     goToProjects() {
       this.$vuetify.goTo('.projects');
+      this.drawer = false;
       console.log('register');
     },
     goToContact() {
       this.$vuetify.goTo('.contact-me');
-      console.log('register');
+      this.drawer = false;
     },
   },
 };
