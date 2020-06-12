@@ -1,5 +1,50 @@
 <template>
   <div class="home">
+    <v-app-bar flat fixed dense color="#1f1f1f" inverted-scroll :scroll-threshold="windowHeight - 20">
+      <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
+
+      <v-toolbar-title style="color: white">Title</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon color="white">mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon color="white">mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon color="white">mdi-dots-vertical</v-icon>
+      </v-btn>
+    </v-app-bar>
+    <v-navigation-drawer v-model="drawer" fixed bottom temporary dark color="black">
+      <v-list nav dense>
+        <v-list-item-group v-model="group" active-class="white--text">
+          <v-list-item @click="goToAbout">
+            <v-list-item-title>About Me</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="goToExperience">
+            <v-list-item-title>Experience</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="goToSkills">
+            <v-list-item-title>Skills</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="goToProjects">
+            <v-list-item-title>Projects & Portfolio</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="goToContact">
+            <v-list-item-title>Contact Me</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
     <div class="canvas">
       <div class="title">
         <div class="title-words ml-2 mr-2" data-aos="fade-right">
@@ -91,35 +136,36 @@ export default {
   },
   data() {
     return {
-      showAbout: false,
+      drawer: false,
+      group: null,
       projects: [
         {
           name: 'Project 1',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-left',
-          color: '#bb86fc'
+          color: '#bb86fc',
         },
         {
           name: 'Project 1',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-up',
-          color: 'red'
+          color: 'red',
         },
         {
           name: 'Project 1',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-up',
-          color: 'purple'
+          color: 'purple',
         },
         {
           name: 'Project 1',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-left',
-          color: 'yellow'
+          color: 'yellow',
         },
       ],
       experiences: [
@@ -217,23 +263,31 @@ export default {
     };
   },
   mounted() {},
-
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
   methods: {
     goToAbout() {
       this.$vuetify.goTo('#about-me');
-      this.showAbout = true;
+      console.log('register');
     },
     goToExperience() {
       this.$vuetify.goTo('#experience');
+      console.log('register');
     },
     goToSkills() {
       this.$vuetify.goTo('.skills');
+      console.log('register');
     },
     goToProjects() {
       this.$vuetify.goTo('.projects');
+      console.log('register');
     },
     goToContact() {
       this.$vuetify.goTo('.contact-me');
+      console.log('register');
     },
   },
 };
