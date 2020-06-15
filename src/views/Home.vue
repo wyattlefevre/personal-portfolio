@@ -20,27 +20,32 @@
       </v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed bottom temporary dark color="black">
+      <v-toolbar dense dark>
+        <v-toolbar-title>
+          Menu
+        </v-toolbar-title>
+      </v-toolbar>
       <v-list nav dense>
         <!-- <v-list-item-group v-model="group" active-class="white--text"> -->
-          <v-list-item @click="goToAbout">
-            <v-list-item-title>About Me</v-list-item-title>
-          </v-list-item>
+        <v-list-item @click="goToAbout">
+          <v-list-item-title>About Me</v-list-item-title>
+        </v-list-item>
 
-          <v-list-item @click="goToExperience">
-            <v-list-item-title>Experience</v-list-item-title>
-          </v-list-item>
+        <v-list-item @click="goToExperience">
+          <v-list-item-title>Experience</v-list-item-title>
+        </v-list-item>
 
-          <v-list-item @click="goToSkills">
-            <v-list-item-title>Skills</v-list-item-title>
-          </v-list-item>
+        <v-list-item @click="goToSkills">
+          <v-list-item-title>Skills</v-list-item-title>
+        </v-list-item>
 
-          <v-list-item @click="goToProjects">
-            <v-list-item-title>Projects & Portfolio</v-list-item-title>
-          </v-list-item>
+        <v-list-item @click="goToProjects">
+          <v-list-item-title>Projects & Portfolio</v-list-item-title>
+        </v-list-item>
 
-          <v-list-item @click="goToContact">
-            <v-list-item-title>Contact Me</v-list-item-title>
-          </v-list-item>
+        <v-list-item @click="goToContact">
+          <v-list-item-title>Contact Me</v-list-item-title>
+        </v-list-item>
         <!-- </v-list-item-group> -->
       </v-list>
     </v-navigation-drawer>
@@ -109,8 +114,36 @@
       <display-cards :items="projects" cols="6"></display-cards>
       <arrow-button class="pa-12" color="#FFF" :hover="colors.accentColor" @button-clicked="goToContact"> </arrow-button>
     </div>
-    <div class="contact-me">
-      <h1>this is where I will list my contact info</h1>
+    <div class="contact-me white--text">
+      <v-container style="height: 100vh;">
+        <v-row align="center" justify="center" class="fill-height">
+          <v-col>
+            <v-row align="center" justify="center" class="mb-4">
+              <div class="text-h3">
+                Interested in working together?
+              </div>
+            </v-row>
+            <v-row align="center" justify="center" class="mb-5">
+              <div>
+                <v-btn large class="text-h5 font-weight-bold">Get In Touch</v-btn>
+              </div>
+            </v-row>
+            <v-row align="center" justify="center">
+              <v-btn icon class="mr-3 ml-3">
+                <v-icon x-large color="white">mdi-github</v-icon>
+              </v-btn>
+
+              <v-btn icon class="mr-3 ml-3">
+                <v-icon x-large color="white">mdi-linkedin</v-icon>
+              </v-btn>
+
+              <v-btn icon class="mr-3 ml-3">
+                <v-icon x-large color="white">mdi-email</v-icon>
+              </v-btn>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
     <div class="footer">
       <p>
@@ -140,28 +173,28 @@ export default {
       group: null,
       projects: [
         {
-          name: 'Project 1',
+          name: 'Photo Site',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-left',
           color: '#bb86fc',
         },
         {
-          name: 'Project 1',
+          name: 'Bug Tracker',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-up',
           color: 'red',
         },
         {
-          name: 'Project 1',
+          name: 'To Do List',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-up',
           color: 'purple',
         },
         {
-          name: 'Project 1',
+          name: 'Time Tracker',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
           transition: 'fade-left',
@@ -276,7 +309,6 @@ export default {
     goToExperience() {
       this.$vuetify.goTo('#experience');
       this.drawer = false;
-
     },
     goToSkills() {
       this.$vuetify.goTo('.skills');
