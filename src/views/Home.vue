@@ -200,6 +200,13 @@ export default {
           transition: 'fade-left',
           color: 'yellow',
         },
+        {
+          name: 'Your Mom',
+          description: 'Description 1',
+          imgSrc: require('../assets/images/project1.jpg'),
+          transition: 'fade-left',
+          color: 'yellow',
+        },
       ],
       experiences: [
         {
