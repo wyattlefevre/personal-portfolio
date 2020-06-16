@@ -1,101 +1,14 @@
 <template>
   <div class="home">
-    <v-app-bar flat fixed dense color="#1f1f1f" inverted-scroll :scroll-threshold="windowHeight - 20">
-      <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
+    <nav-bar :windowHeight="windowHeight"/>
 
-      <v-toolbar-title style="color: white">Title</v-toolbar-title>
+    <landing-banner @goToAbout="goToAbout"/>
 
-      <v-spacer></v-spacer>
+    <about-me @goToExperience="goToExperience"/>
 
-      <v-btn icon>
-        <v-icon color="white">mdi-magnify</v-icon>
-      </v-btn>
+    <my-experience :experiences="experiences"/>
+    
 
-      <v-btn icon>
-        <v-icon color="white">mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon color="white">mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-    <v-navigation-drawer v-model="drawer" fixed bottom temporary dark color="black">
-      <v-toolbar dense dark>
-        <v-toolbar-title>
-          Menu
-        </v-toolbar-title>
-      </v-toolbar>
-      <v-list nav dense>
-        <!-- <v-list-item-group v-model="group" active-class="white--text"> -->
-        <v-list-item @click="goToAbout">
-          <v-list-item-title>About Me</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item @click="goToExperience">
-          <v-list-item-title>Experience</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item @click="goToSkills">
-          <v-list-item-title>Skills</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item @click="goToProjects">
-          <v-list-item-title>Projects & Portfolio</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item @click="goToContact">
-          <v-list-item-title>Contact Me</v-list-item-title>
-        </v-list-item>
-        <!-- </v-list-item-group> -->
-      </v-list>
-    </v-navigation-drawer>
-
-    <div class="canvas">
-      <div class="title">
-        <div class="title-words ml-2 mr-2" data-aos="fade-right">
-          <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">
-            Hi, I'm Wyatt LeFevre.
-          </h1>
-          <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">
-            I design and write software, and I love what I do.
-          </h2>
-        </div>
-        <arrow-button color="#000" :hover="colors.accentColor" @button-clicked="goToAbout"> </arrow-button>
-      </div>
-    </div>
-    <div id="about-me">
-      <v-container ma-0 pa-0 fluid>
-        <v-row align="center" justify="center">
-          <v-col cols="8">
-            <v-row justify="center" class="mt-4">
-              <v-col>
-                <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
-                <p class="display-1 font-weight-black text-justify" data-aos="fade-right" v-if="$vuetify.breakpoint.smAndUp">
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
-                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
-                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
-                </p>
-                <p class="headline font-weight-black" data-aos="fade-right" v-else>
-                  Hello! I am a self driven developer and student. I love to get sucked into interesting projects filled with difficult problems that
-                  require creative solutions. I currently work in a team as a full stack web developer and I am pursuing a degree in Computer Science
-                  with an emphasis in software engineering at Brigham Young University in Provo, Utah.
-                </p>
-                {{ $vuetify.breakpoint.name }}
-                {{ $vuetify.breakpoint.smAndUp }}
-              </v-col>
-            </v-row>
-            <v-row class="mb-4" justify="center">
-              <h1 class="display-1 font-weight-black mb-4" id="special-button-1" @click="goToExperience">Experience</h1>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-    <div id="experience" style="padding-top: 96px">
-      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Experience</h1>
-      <display-cards :items="experiences" colorAll="#1d1d1d" cols="12"></display-cards>
-      <arrow-button color="#FFF" :hover="colors.accentColor" @button-clicked="goToSkills"> </arrow-button>
-    </div>
     <div class="skills pa-12">
       <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Skills</h1>
       <div class="icons pb-12">
@@ -107,12 +20,12 @@
         </v-row>
       </div>
       <div class="page-space "></div>
-      <arrow-button color="#FFF" :hover="colors.accentColor" @button-clicked="goToProjects"> </arrow-button>
+      <arrow-button color="#FFF" @button-clicked="goToProjects"> </arrow-button>
     </div>
     <div class="projects pa-12">
       <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Projects & Portfolio</h1>
       <display-cards :items="projects" cols="6"></display-cards>
-      <arrow-button class="pa-12" color="#FFF" :hover="colors.accentColor" @button-clicked="goToContact"> </arrow-button>
+      <arrow-button class="pa-12" color="#FFF" @button-clicked="goToContact"> </arrow-button>
     </div>
     <div class="contact-me white--text">
       <v-container style="height: 100vh;">
@@ -157,8 +70,12 @@
 <script>
 // @ is an alias to /src
 import { vueWindowSizeMixin } from 'vue-window-size';
-import ArrowButton from '../components/ArrowButton';
-import DisplayCards from '../components/DisplayCards';
+import ArrowButton from '@/components/ArrowButton';
+import DisplayCards from '@/components/DisplayCards';
+import Navbar from '@/components/Navbar';
+import LandingBanner from '@/components/LandingBanner';
+import AboutMe from '@/components/AboutMe';
+import MyExperience from '@/components/MyExperience';
 
 export default {
   name: 'Home',
@@ -166,11 +83,13 @@ export default {
   components: {
     'arrow-button': ArrowButton,
     'display-cards': DisplayCards,
+    'nav-bar' : Navbar,
+    'landing-banner' : LandingBanner,
+    'about-me' : AboutMe,
+    'my-experience' : MyExperience,
   },
   data() {
     return {
-      drawer: false,
-      group: null,
       projects: [
         {
           name: 'Photo Site',
@@ -310,11 +229,11 @@ export default {
   },
   methods: {
     goToAbout() {
-      this.$vuetify.goTo('#about-me');
+      this.$vuetify.goTo('.about-me');
       this.drawer = false;
     },
     goToExperience() {
-      this.$vuetify.goTo('#experience');
+      this.$vuetify.goTo('.my-experience');
       this.drawer = false;
     },
     goToSkills() {
@@ -345,27 +264,10 @@ $accent-color: #bb86fc;
 .down-arrow:hover {
   background-color: $accent-color;
 }
-#about-me {
-  color: white;
-  /* color: #8195A8; */
-  background-color: $background-main-color;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#experience {
-  min-height: 100vh;
-  background-color: $background-main-color;
-  color: white;
-}
 
-#special-button-1 {
-  cursor: pointer;
-}
-#special-button-1:hover {
-  color: $accent-color;
-}
+
+
+
 
 .skills {
   background-color: $background-main-color;
@@ -395,39 +297,5 @@ $accent-color: #bb86fc;
   height: 100px;
   color: black;
   text-shadow: 2px 2px 3px white;
-}
-
-.canvas {
-  background-image: url('../assets/images/canvas.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 100vh;
-}
-@media screen and (min-width: 1550px) {
-  .canvas {
-    background-image: url('../assets/images/canvas-wide.jpg');
-  }
-}
-
-.title {
-  color: rgb(0, 0, 0);
-  position: absolute;
-  min-width: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.title-words {
-  /* text-shadow: 5px 5px 15px rgb(141, 141, 141); */
-}
-
-.title h1 {
-  /* font-size: 3em;
-  line-height: 1em;
-  margin-bottom: 20px; */
 }
 </style>

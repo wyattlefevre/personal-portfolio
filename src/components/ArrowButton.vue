@@ -15,11 +15,11 @@ export default {
       default: false,
     },
     color: String,
-    hover: String,
   },
   data() {
     return {
       buttonColor: '',
+      hover: '#bb86fc',
     };
   },
   created() {
