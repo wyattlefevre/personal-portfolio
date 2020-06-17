@@ -1,9 +1,8 @@
 <template>
-  <div class="my-experience" style="padding-top: 96px">
-    <!-- <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Experience</h1> -->
-    <section-header text="Experience"/>
-    <display-cards :items="experiences" colorAll="#1d1d1d" cols="12"></display-cards>
-    <arrow-button color="#FFF" @button-clicked="$emit('goToSkills')"> </arrow-button>
+  <div class="projects pa-12">
+    <section-header text="Projects & Portfolio"/>
+    <display-cards :items="projects" cols="6"></display-cards>
+    <arrow-button class="pa-12" color="#FFF" @button-clicked="$emit('goToContact')"> </arrow-button>
   </div>
 </template>
 
@@ -11,9 +10,10 @@
 import DisplayCards from './DisplayCards';
 import ArrowButton from './ArrowButton';
 import SectionHeader from './SectionHeader';
+
 export default {
-  name: 'MyExperience',
-  props: ['experiences'],
+  name: 'MyProjects',
+  props: ['projects'],
   components: {
     'arrow-button': ArrowButton,
     'display-cards': DisplayCards,
@@ -26,16 +26,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//Colors:
 $background-main-color: #121212;
 $background-secondary-color: #000;
 $card-color: #1d1d1d;
 $card-color-light: #1f1f1f;
 $accent-color: #bb86fc;
-
-.my-experience {
+.projects {
+  color: white;
   min-height: 100vh;
   background-color: $background-main-color;
-  color: white;
 }
 </style>

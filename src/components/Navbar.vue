@@ -27,23 +27,23 @@
       </v-toolbar>
       <v-list nav dense>
         <!-- <v-list-item-group v-model="group" active-class="white--text"> -->
-        <v-list-item @click="$emit('goToAbout')">
+        <v-list-item @click="$emit('goToAbout'); drawer=false">
           <v-list-item-title>About Me</v-list-item-title>
         </v-list-item>
 
-        <v-list-item @click="$emit('goToExperience')">
+        <v-list-item @click="$emit('goToExperience'); drawer=false">
           <v-list-item-title>Experience</v-list-item-title>
         </v-list-item>
 
-        <v-list-item @click="$emit('goToSkills')">
+        <v-list-item @click="$emit('goToSkills'); drawer=false">
           <v-list-item-title>Skills</v-list-item-title>
         </v-list-item>
 
-        <v-list-item @click="$emit('goToProjects')">
+        <v-list-item @click="$emit('goToProjects'); drawer=false">
           <v-list-item-title>Projects & Portfolio</v-list-item-title>
         </v-list-item>
 
-        <v-list-item @click="$emit('goToContact')">
+        <v-list-item @click="$emit('goToContact'); drawer=false">
           <v-list-item-title>Contact Me</v-list-item-title>
         </v-list-item>
         <!-- </v-list-item-group> -->

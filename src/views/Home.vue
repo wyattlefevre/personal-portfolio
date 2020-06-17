@@ -1,63 +1,25 @@
 <template>
   <div class="home">
-    <nav-bar :windowHeight="windowHeight"/>
+    <nav-bar
+      :windowHeight="windowHeight"
+      @goToAbout="goToAbout"
+      @goToExperience="goToExperience"
+      @goToSkills="goToSkills"
+      @goToProjects="goToProjects"
+      @goToContact="goToContact"
+    />
 
-    <landing-banner @goToAbout="goToAbout"/>
+    <landing-banner @goToAbout="goToAbout" />
 
-    <about-me @goToExperience="goToExperience"/>
+    <about-me @goToExperience="goToExperience" />
 
-    <my-experience :experiences="experiences"/>
-    
+    <my-experience @goToSkills="goToSkills" :experiences="experiences" />
 
-    <div class="skills pa-12">
-      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Skills</h1>
-      <div class="icons pb-12">
-        <v-row justify="center" align="center">
-          <v-col v-for="s in skills" :key="s.name" sm="6" cols="10" md="5" lg="3" class="text-center" :data-aos="s.transition">
-            <img :src="s.iconSrc" height="200px" />
-            <h1 class="display-1">{{ s.name }}</h1>
-          </v-col>
-        </v-row>
-      </div>
-      <div class="page-space "></div>
-      <arrow-button color="#FFF" @button-clicked="goToProjects"> </arrow-button>
-    </div>
-    <div class="projects pa-12">
-      <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Projects & Portfolio</h1>
-      <display-cards :items="projects" cols="6"></display-cards>
-      <arrow-button class="pa-12" color="#FFF" @button-clicked="goToContact"> </arrow-button>
-    </div>
-    <div class="contact-me white--text">
-      <v-container style="height: 100vh;">
-        <v-row align="center" justify="center" class="fill-height">
-          <v-col>
-            <v-row align="center" justify="center" class="mb-4">
-              <div class="text-h3">
-                Interested in working together?
-              </div>
-            </v-row>
-            <v-row align="center" justify="center" class="mb-5">
-              <div>
-                <v-btn large class="text-h5 font-weight-bold">Get In Touch</v-btn>
-              </div>
-            </v-row>
-            <v-row align="center" justify="center">
-              <v-btn icon class="mr-3 ml-3">
-                <v-icon x-large color="white">mdi-github</v-icon>
-              </v-btn>
+    <my-skills @goToProjects="goToProjects" :skills="skills" />
 
-              <v-btn icon class="mr-3 ml-3">
-                <v-icon x-large color="white">mdi-linkedin</v-icon>
-              </v-btn>
+    <my-projects @goToContact="goToContact" :projects="projects" />
 
-              <v-btn icon class="mr-3 ml-3">
-                <v-icon x-large color="white">mdi-email</v-icon>
-              </v-btn>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
+    <contact-me />
     <div class="footer">
       <p>
         Many of the icons i use are from
@@ -70,23 +32,25 @@
 <script>
 // @ is an alias to /src
 import { vueWindowSizeMixin } from 'vue-window-size';
-import ArrowButton from '@/components/ArrowButton';
-import DisplayCards from '@/components/DisplayCards';
 import Navbar from '@/components/Navbar';
 import LandingBanner from '@/components/LandingBanner';
 import AboutMe from '@/components/AboutMe';
 import MyExperience from '@/components/MyExperience';
+import MySkills from '@/components/MySkills';
+import MyProjects from '@/components/MyProjects';
+import ContactMe from '@/components/ContactMe';
 
 export default {
   name: 'Home',
   mixins: [vueWindowSizeMixin],
   components: {
-    'arrow-button': ArrowButton,
-    'display-cards': DisplayCards,
-    'nav-bar' : Navbar,
-    'landing-banner' : LandingBanner,
-    'about-me' : AboutMe,
-    'my-experience' : MyExperience,
+    'nav-bar': Navbar,
+    'landing-banner': LandingBanner,
+    'about-me': AboutMe,
+    'my-experience': MyExperience,
+    'my-skills': MySkills,
+    'my-projects': MyProjects,
+    'contact-me': ContactMe,
   },
   data() {
     return {
@@ -265,30 +229,10 @@ $accent-color: #bb86fc;
   background-color: $accent-color;
 }
 
-
-
-
-
-.skills {
-  background-color: $background-main-color;
-  color: white;
-  // min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
 .icons {
   display: flex;
 }
-.projects {
-  color: white;
-  min-height: 100vh;
-  background-color: $background-main-color;
-}
-.contact-me {
-  min-height: 100vh;
-  background-color: $background-secondary-color;
-}
+
 .colors {
   display: flex;
 }
