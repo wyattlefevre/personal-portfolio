@@ -12,7 +12,7 @@
                 <v-card-title class="text-h4 text-md-h3 fix" :class="{'justify-center': $vuetify.breakpoint.smAndDown}" v-text="i.name"></v-card-title>
                 <v-card-text class="text-subtitle-1" v-text="i.description"></v-card-text>
               </div>
-              <v-avatar class="ma-4" size="150" tile style="background-color: white">
+              <v-avatar class="ma-4 rounded" size="150" tile style="background-color: white">
                 <v-img :src="i.imgSrc"></v-img>
               </v-avatar>
             </div>
