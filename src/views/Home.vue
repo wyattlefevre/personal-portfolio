@@ -15,17 +15,17 @@
 
     <my-experience @goToSkills="goToSkills" :experiences="experiences" />
 
-    <my-skills @goToProjects="goToProjects" :skills="skills" />
+    <!-- <my-skills @goToProjects="goToProjects" :skills="skills" /> -->
 
-    <my-projects @goToContact="goToContact" :projects="projects" />
+    <!-- <my-projects @goToContact="goToContact" :projects="projects" /> -->
 
-    <contact-me />
-    <div class="footer">
+    <!-- <contact-me /> -->
+    <!-- <div class="footer">
       <p>
         Many of the icons i use are from
         <a href="https://icons8.com/">icons8.com</a>
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -36,9 +36,9 @@ import Navbar from '@/components/Navbar';
 import LandingBanner from '@/components/LandingBanner';
 import AboutMe from '@/components/AboutMe';
 import MyExperience from '@/components/MyExperience';
-import MySkills from '@/components/MySkills';
-import MyProjects from '@/components/MyProjects';
-import ContactMe from '@/components/ContactMe';
+// import MySkills from '@/components/MySkills';
+// import MyProjects from '@/components/MyProjects';
+// import ContactMe from '@/components/ContactMe';
 
 export default {
   name: 'Home',
@@ -48,9 +48,9 @@ export default {
     'landing-banner': LandingBanner,
     'about-me': AboutMe,
     'my-experience': MyExperience,
-    'my-skills': MySkills,
-    'my-projects': MyProjects,
-    'contact-me': ContactMe,
+    // 'my-skills': MySkills,
+    // 'my-projects': MyProjects,
+    // 'contact-me': ContactMe,
   },
   data() {
     return {
@@ -224,22 +224,4 @@ $background-secondary-color: #000;
 $card-color: #1d1d1d;
 $card-color-light: #1f1f1f;
 $accent-color: #bb86fc;
-
-.down-arrow:hover {
-  background-color: $accent-color;
-}
-
-.icons {
-  display: flex;
-}
-
-.colors {
-  display: flex;
-}
-.color {
-  width: 70px;
-  height: 100px;
-  color: black;
-  text-shadow: 2px 2px 3px white;
-}
 </style>

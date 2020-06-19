@@ -1,7 +1,7 @@
 <template>
 <v-container>
     <v-row justify="center">
-        <span class="text-h1">{{text}}</span>
+        <span class="text-h3 text-sm-h2 text-md-h1">{{text}}</span>
     </v-row>
 </v-container>
 </template>

@@ -14,17 +14,21 @@
             </div>
           </v-row>
           <v-row align="center" justify="center">
-            <v-btn icon class="mr-3 ml-3">
-              <v-icon x-large color="white">mdi-github</v-icon>
-            </v-btn>
-
-            <v-btn icon class="mr-3 ml-3">
-              <v-icon x-large color="white">mdi-linkedin</v-icon>
-            </v-btn>
-
-            <v-btn icon class="mr-3 ml-3">
-              <v-icon x-large color="white">mdi-email</v-icon>
-            </v-btn>
+            <v-hover v-slot:default="{ hover }" close-delay="200">
+              <v-btn class="mr-3 ml-3" icon href="https://github.com/wyattlefevre">
+                <v-icon x-large :color="hover ? 'accent' : 'white'">mdi-github</v-icon>
+              </v-btn>
+            </v-hover>
+            <v-hover v-slot:default="{ hover }" close-delay="200">
+              <v-btn class="mr-3 ml-3" icon href="https://www.linkedin.com/in/wyatt-lefevre-a22b261a6/">
+                <v-icon x-large :color="hover ? 'accent' : 'white'">mdi-linkedin</v-icon>
+              </v-btn>
+            </v-hover>
+            <v-hover v-slot:default="{ hover }" close-delay="200">
+              <v-btn class="mr-3 ml-3" icon href="mailto:wyattlefevre@gmail.com">
+                <v-icon x-large :color="hover ? 'accent' : 'white'">mdi-email</v-icon>
+              </v-btn>
+            </v-hover>
           </v-row>
         </v-col>
       </v-row>

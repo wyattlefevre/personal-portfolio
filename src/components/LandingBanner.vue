@@ -3,7 +3,7 @@
     <div class="title">
       <div class="title-words ml-2 mr-2" data-aos="fade-right">
         <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">
-          Hi, I'm Wyatt LeFevre.
+          Hi, I'm <span class="font-weight-bold">Wyatt LeFevre.</span>
         </h1>
         <h2 :class="[$vuetify.breakpoint.smAndUp ? 'display-1 mb-5' : 'headline mb-5']">
           I design and write software, and I love what I do.
@@ -36,7 +36,7 @@ export default {
   background-attachment: fixed;
   position: relative;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 @media screen and (min-width: 1550px) {
