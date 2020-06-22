@@ -1,21 +1,21 @@
 <template>
-  <div class="projects pa-12">
+  <div class="projects">
     <section-header text="Projects & Portfolio"/>
-    <display-cards :items="projects" cols="6"></display-cards>
-    <arrow-button class="pa-12" color="#FFF" @button-clicked="$emit('goToContact')"> </arrow-button>
+    <display-cards :items="projects" cols="12"></display-cards>
+    <!-- <arrow-button class="pa-12" color="#FFF" @button-clicked="$emit('goToContact')"> </arrow-button> -->
   </div>
 </template>
 
 <script>
 import DisplayCards from './DisplayCards';
-import ArrowButton from './ArrowButton';
+// import ArrowButton from './ArrowButton';
 import SectionHeader from './SectionHeader';
 
 export default {
   name: 'MyProjects',
   props: ['projects'],
   components: {
-    'arrow-button': ArrowButton,
+    // 'arrow-button': ArrowButton,
     'display-cards': DisplayCards,
     'section-header' : SectionHeader,
   },

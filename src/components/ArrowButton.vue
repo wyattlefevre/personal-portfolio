@@ -1,9 +1,13 @@
 <template>
-  <v-row justify="center">
-    <v-btn icon @click="clicked">
-      <v-icon :color="buttonColor" @mouseover="onHover" @mouseout="offHover" size="4.5em">mdi-chevron-down</v-icon>
-    </v-btn>
-  </v-row>
+  <v-container>
+    <v-row justify="center">
+      <v-btn icon @click="clicked">
+        <v-icon :color="buttonColor" @mouseover="onHover" @mouseout="offHover" size="4.5em"
+          >mdi-chevron-down</v-icon
+        >
+      </v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

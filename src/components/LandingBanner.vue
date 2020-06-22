@@ -1,7 +1,7 @@
 <template>
   <div class="landing-banner">
     <div class="title">
-      <div class="title-words ml-2 mr-2" data-aos="fade-right">
+      <div class="title-words pl-2 pr-2" data-aos="fade-right">
         <h1 :class="[$vuetify.breakpoint.smAndUp ? 'display-2 mb-4 text-no-wrap' : 'display-1 mb-4 text-no-wrap']">
           Hi, I'm <span class="font-weight-bold">Wyatt LeFevre.</span>
         </h1>
@@ -48,7 +48,6 @@ export default {
 .title {
   color: rgb(0, 0, 0);
   position: absolute;
-  min-width: 400px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

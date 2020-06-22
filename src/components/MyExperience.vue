@@ -1,21 +1,21 @@
 <template>
-  <div class="my-experience" style="padding-top: 96px">
+  <div class="my-experience">
     <!-- <h1 class="display-4 text-center font-weight-black pb-12 pt-12">Experience</h1> -->
     <section-header text="Experience"/>
     <display-cards :items="experiences" colorAll="#1d1d1d" cols="12"></display-cards>
-    <arrow-button color="#FFF" @button-clicked="$emit('goToSkills')"> </arrow-button>
+    <!-- <arrow-button color="#FFF" @button-clicked="$emit('goToSkills')"> </arrow-button> -->
   </div>
 </template>
 
 <script>
 import DisplayCards from './DisplayCards';
-import ArrowButton from './ArrowButton';
+// import ArrowButton from './ArrowButton';
 import SectionHeader from './SectionHeader';
 export default {
   name: 'MyExperience',
   props: ['experiences'],
   components: {
-    'arrow-button': ArrowButton,
+    // 'arrow-button': ArrowButton,
     'display-cards': DisplayCards,
     'section-header' : SectionHeader,
   },

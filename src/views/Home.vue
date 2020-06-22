@@ -15,9 +15,9 @@
 
     <my-experience @goToSkills="goToSkills" :experiences="experiences" />
 
-    <!-- <my-skills @goToProjects="goToProjects" :skills="skills" /> -->
+    <my-skills @goToProjects="goToProjects" :skills="skills" />
 
-    <!-- <my-projects @goToContact="goToContact" :projects="projects" /> -->
+    <my-projects @goToContact="goToContact" :projects="projects" />
 
     <!-- <contact-me /> -->
     <!-- <div class="footer">
@@ -36,8 +36,8 @@ import Navbar from '@/components/Navbar';
 import LandingBanner from '@/components/LandingBanner';
 import AboutMe from '@/components/AboutMe';
 import MyExperience from '@/components/MyExperience';
-// import MySkills from '@/components/MySkills';
-// import MyProjects from '@/components/MyProjects';
+import MySkills from '@/components/MySkills';
+import MyProjects from '@/components/MyProjects';
 // import ContactMe from '@/components/ContactMe';
 
 export default {
@@ -48,8 +48,8 @@ export default {
     'landing-banner': LandingBanner,
     'about-me': AboutMe,
     'my-experience': MyExperience,
-    // 'my-skills': MySkills,
-    // 'my-projects': MyProjects,
+    'my-skills': MySkills,
+    'my-projects': MyProjects,
     // 'contact-me': ContactMe,
   },
   data() {
@@ -59,35 +59,35 @@ export default {
           name: 'Photo Site',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-left',
+          transition: 'fade-right',
           color: '#bb86fc',
         },
         {
           name: 'Bug Tracker',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-up',
+          transition: 'fade-right',
           color: 'red',
         },
         {
           name: 'To Do List',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-up',
+          transition: 'fade-right',
           color: 'purple',
         },
         {
           name: 'Time Tracker',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-left',
+          transition: 'fade-right',
           color: 'yellow',
         },
         {
           name: 'Your Mom',
           description: 'Description 1',
           imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-left',
+          transition: 'fade-right',
           color: 'yellow',
         },
       ],
@@ -119,25 +119,26 @@ export default {
         },
       ],
       skills: [
+        //DO NOT USE 'ZOOM' ANIMATIONS IT'LL EFF UP THE STYLING
         {
           name: 'html',
           iconSrc: require('../assets/images/icons/html.png'),
-          transition: 'fade-up',
+          transition: 'fade-up-left',
         },
         {
           name: 'css',
           iconSrc: require('../assets/images/icons/css.png'),
-          transition: 'fade-down',
+          transition: 'fade-up-right',
         },
         {
           name: 'asp.net',
           iconSrc: require('../assets/images/icons/aspnet.png'),
-          transition: 'fade-right',
+          transition: 'fade-up-left',
         },
         {
           name: 'bootstrap',
           iconSrc: require('../assets/images/icons/bootstrap.png'),
-          transition: 'fade-left',
+          transition: 'fade-up-right',
         },
         {
           name: 'C++',
@@ -147,37 +148,37 @@ export default {
         {
           name: 'C#',
           iconSrc: require('../assets/images/icons/csharp.png'),
-          transition: 'fade-down-right',
+          transition: 'fade-up-right',
         },
         {
           name: 'git',
           iconSrc: require('../assets/images/icons/git.png'),
-          transition: 'fade-up-right',
+          transition: 'fade-up-left',
         },
         {
           name: 'javascript',
           iconSrc: require('../assets/images/icons/javascript.png'),
-          transition: 'fade-down-left',
+          transition: 'fade-up-right',
         },
         {
           name: 'mongodb',
           iconSrc: require('../assets/images/icons/mongodb.png'),
-          transition: 'zoom-in-up',
+          transition: 'fade-up-left',
         },
         {
           name: 'mysql',
           iconSrc: require('../assets/images/icons/mysql.png'),
-          transition: 'zoom-out-down',
+          transition: 'fade-up-right',
         },
         {
           name: 'vue',
           iconSrc: require('../assets/images/icons/vue.png'),
-          transition: 'zoom-in-right',
+          transition: 'fade-up-left',
         },
         {
           name: 'vuetify',
           iconSrc: require('../assets/images/icons/vuetify.png'),
-          transition: 'zoom-out-left',
+          transition: 'fade-up-right',
         },
       ],
       colors: {
