@@ -1,5 +1,6 @@
 <template>
   <div class="projects">
+
     <section-header text="Projects & Portfolio"/>
     <display-cards :items="projects" cols="12"></display-cards>
     <!-- <arrow-button class="pa-12" color="#FFF" @button-clicked="$emit('goToContact')"> </arrow-button> -->

@@ -19,7 +19,7 @@
 
     <my-projects @goToContact="goToContact" :projects="projects" />
 
-    <!-- <contact-me /> -->
+    <contact-me />
     <!-- <div class="footer">
       <p>
         Many of the icons i use are from
@@ -38,7 +38,7 @@ import AboutMe from '@/components/AboutMe';
 import MyExperience from '@/components/MyExperience';
 import MySkills from '@/components/MySkills';
 import MyProjects from '@/components/MyProjects';
-// import ContactMe from '@/components/ContactMe';
+import ContactMe from '@/components/ContactMe';
 
 export default {
   name: 'Home',
@@ -50,7 +50,7 @@ export default {
     'my-experience': MyExperience,
     'my-skills': MySkills,
     'my-projects': MyProjects,
-    // 'contact-me': ContactMe,
+    'contact-me': ContactMe,
   },
   data() {
     return {
@@ -95,26 +95,26 @@ export default {
         {
           name: 'Brigham Young University',
           description:
-            'this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did this is what i did',
+            'I am currently studying computer science at Brigham Young Unversity with an emphasis in Software Engineering.',
           imgSrc: require('../assets/images/BYU.png'),
           transition: 'fade-right',
         },
         {
-          name: 'another thing I did',
-          description: 'this is what i did hahahaha it was really good',
+          name: 'LSIT',
+          description: 'I currently work in a team as a full-stack web developer for the College of Life Sciences at BYU.',
           imgSrc: '',
           transition: 'fade-right',
         },
         {
-          name: 'a thing I did again',
-          description: 'this is what i did',
-          imgSrc: '',
+          name: 'FHTL',
+          description: 'I previously worked as an undergrad research assistant for the Family History Technology Lab at BYU where I worked with other students and professors to create interesting web applications.',
+          imgSrc: require('../assets/images/FHTL.png'),
           transition: 'fade-right',
         },
         {
-          name: 'the last one',
+          name: 'Teaching Assistant',
           description: 'this is what i did',
-          imgSrc: '',
+          imgSrc: require('../assets/images/CPMS.png'),
           transition: 'fade-right',
         },
       ],

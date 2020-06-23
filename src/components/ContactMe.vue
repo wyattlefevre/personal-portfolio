@@ -4,7 +4,7 @@
       <v-row align="center" justify="center" class="fill-height">
         <v-col>
           <v-row align="center" justify="center" class="mb-4">
-            <div class="text-h3">
+            <div class="text-center text-h4 text-md-h3">
               Interested in working together?
             </div>
           </v-row>
