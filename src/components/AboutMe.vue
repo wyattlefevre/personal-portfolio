@@ -7,7 +7,7 @@
             <v-col>
               <!-- <p :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" data-aos="fade-right"> -->
               <p
-                class="text-h5"
+                class="text-h5 text-md-h4 text-lg-h3 text-justify"
                 data-aos="fade-right"
                 :class="{'text-center':$vuetify.breakpoint.smAndDown}"
               >

@@ -10,7 +10,14 @@
           </v-row>
           <v-row align="center" justify="center" class="mb-5">
             <div>
-              <v-btn large class="text-h5 font-weight-bold">Get In Touch</v-btn>
+              <v-hover v-slot:default="{ hover }" close-delay="200">
+                <v-btn
+                  large
+                  class="text-h5 font-weight-bold black--text"
+                  href="mailto:wyattlefevre@gmail.com"
+                  :color="hover ? 'accent' : 'white'"
+                  >Get In Touch</v-btn>
+              </v-hover>
             </div>
           </v-row>
           <v-row align="center" justify="center">
@@ -20,7 +27,11 @@
               </v-btn>
             </v-hover>
             <v-hover v-slot:default="{ hover }" close-delay="200">
-              <v-btn class="mr-3 ml-3" icon href="https://www.linkedin.com/in/wyatt-lefevre-a22b261a6/">
+              <v-btn
+                class="mr-3 ml-3"
+                icon
+                href="https://www.linkedin.com/in/wyatt-lefevre-a22b261a6/"
+              >
                 <v-icon x-large :color="hover ? 'accent' : 'white'">mdi-linkedin</v-icon>
               </v-btn>
             </v-hover>

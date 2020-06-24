@@ -18,7 +18,7 @@
                   }"
                   v-text="i.name"
                 ></v-card-title>
-                <v-card-text class="text-subtitle-1 text-md-h5" v-text="i.description"></v-card-text>
+                <v-card-text class="text-subtitle-1 text-md-h5" v-html="i.description"></v-card-text>
               </div>
               <v-avatar color="black" class="ma-4 rounded" size="170" tile style="background-color: white">
                 <v-img :src="i.imgSrc"></v-img>

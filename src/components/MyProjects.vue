@@ -2,13 +2,14 @@
   <div class="projects">
 
     <section-header text="Projects & Portfolio"/>
-    <display-cards :items="projects" cols="12"></display-cards>
+    <!-- <display-cards :items="projects" cols="12"></display-cards> -->
+    <h3 class="text-h3 text-center">Coming Soon!</h3>
     <!-- <arrow-button class="pa-12" color="#FFF" @button-clicked="$emit('goToContact')"> </arrow-button> -->
   </div>
 </template>
 
 <script>
-import DisplayCards from './DisplayCards';
+// import DisplayCards from './DisplayCards';
 // import ArrowButton from './ArrowButton';
 import SectionHeader from './SectionHeader';
 
@@ -17,7 +18,7 @@ export default {
   props: ['projects'],
   components: {
     // 'arrow-button': ArrowButton,
-    'display-cards': DisplayCards,
+    // 'display-cards': DisplayCards,
     'section-header' : SectionHeader,
   },
   data() {

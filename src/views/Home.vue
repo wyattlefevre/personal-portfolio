@@ -95,14 +95,14 @@ export default {
         {
           name: 'Brigham Young University',
           description:
-            'I am currently studying computer science at Brigham Young Unversity with an emphasis in Software Engineering.',
+            'I am currently studying computer science at Brigham Young Unversity with an emphasis in Software Engineering. I recently made the <a href="https://www.cpms.byu.edu/wp-content/uploads/2020/06/Deans-List-Poster-Winter-2020.pdf">Dean\'s List</a>.',
           imgSrc: require('../assets/images/BYU.png'),
           transition: 'fade-right',
         },
         {
           name: 'LSIT',
-          description: 'I currently work in a team as a full-stack web developer for the College of Life Sciences at BYU.',
-          imgSrc: '',
+          description: 'I currently work in a team as a full-stack web developer for the IT Department of the College of Life Sciences at BYU.',
+          imgSrc: require('../assets/images/LSIT.png'),
           transition: 'fade-right',
         },
         {
@@ -113,7 +113,7 @@ export default {
         },
         {
           name: 'Teaching Assistant',
-          description: 'this is what i did',
+          description: 'I was a TA for the "introduction to object-oriented programming" course at BYU. I helped hundreds of students through their projects in the C++ programming language. I received an average five-star rating from students when surveyed and solidified a strong knowledge of the fundamentals of programming.',
           imgSrc: require('../assets/images/CPMS.png'),
           transition: 'fade-right',
         },
@@ -121,22 +121,22 @@ export default {
       skills: [
         //DO NOT USE 'ZOOM' ANIMATIONS IT'LL EFF UP THE STYLING
         {
-          name: 'html',
+          name: 'HTML',
           iconSrc: require('../assets/images/icons/html.png'),
           transition: 'fade-up-left',
         },
         {
-          name: 'css',
+          name: 'CSS',
           iconSrc: require('../assets/images/icons/css.png'),
           transition: 'fade-up-right',
         },
         {
-          name: 'asp.net',
+          name: 'ASP.NET',
           iconSrc: require('../assets/images/icons/aspnet.png'),
           transition: 'fade-up-left',
         },
         {
-          name: 'bootstrap',
+          name: 'Bootstrap',
           iconSrc: require('../assets/images/icons/bootstrap.png'),
           transition: 'fade-up-right',
         },
@@ -151,32 +151,32 @@ export default {
           transition: 'fade-up-right',
         },
         {
-          name: 'git',
+          name: 'Git',
           iconSrc: require('../assets/images/icons/git.png'),
           transition: 'fade-up-left',
         },
         {
-          name: 'javascript',
+          name: 'JavaScript',
           iconSrc: require('../assets/images/icons/javascript.png'),
           transition: 'fade-up-right',
         },
         {
-          name: 'mongodb',
+          name: 'MongoDB',
           iconSrc: require('../assets/images/icons/mongodb.png'),
           transition: 'fade-up-left',
         },
         {
-          name: 'mysql',
+          name: 'MySQL',
           iconSrc: require('../assets/images/icons/mysql.png'),
           transition: 'fade-up-right',
         },
         {
-          name: 'vue',
+          name: 'Vue.js',
           iconSrc: require('../assets/images/icons/vue.png'),
           transition: 'fade-up-left',
         },
         {
-          name: 'vuetify',
+          name: 'Vuetify',
           iconSrc: require('../assets/images/icons/vuetify.png'),
           transition: 'fade-up-right',
         },
