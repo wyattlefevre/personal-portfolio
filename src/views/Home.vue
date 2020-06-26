@@ -95,7 +95,7 @@ export default {
         {
           name: 'Brigham Young University',
           description:
-            'I am currently studying computer science at Brigham Young Unversity with an emphasis in Software Engineering. I recently made the <a href="https://www.cpms.byu.edu/wp-content/uploads/2020/06/Deans-List-Poster-Winter-2020.pdf">Dean\'s List</a>.',
+            'I am currently studying computer science at Brigham Young University with an emphasis in Software Engineering. I recently made the <a href="https://www.cpms.byu.edu/wp-content/uploads/2020/06/Deans-List-Poster-Winter-2020.pdf">Dean\'s List</a>.',
           imgSrc: require('../assets/images/BYU.png'),
           transition: 'fade-right',
         },
