@@ -97,7 +97,7 @@ export default {
         {
           name: 'Brigham Young University',
           description:
-            'I am currently studying computer science at Brigham Young University with an emphasis in Software Engineering. I recently made the <a href="https://www.cpms.byu.edu/wp-content/uploads/2020/06/Deans-List-Poster-Winter-2020.pdf">Dean\'s List</a>.',
+            'I am currently studying computer science at Brigham Young University with an emphasis in Software Engineering. I recently made the <a href="https://www.cpms.byu.edu/wp-content/uploads/2020/06/Deans-List-Poster-Winter-2020.pdf" target="_blank">Dean\'s List</a>.',
           imgSrc: require('../assets/images/BYU.png'),
           transition: 'fade-right',
         },
@@ -111,7 +111,7 @@ export default {
         {
           name: 'FHTL',
           description:
-            'I previously worked as an undergrad research assistant for the Family History Technology Lab at BYU where I worked with other students and professors to create interesting web applications.',
+            'I previously worked as an undergrad research assistant for the <a href="https://fhtl.byu.edu/" target="_blank">Family History Technology Lab at BYU</a> where I worked with other students and professors to create interesting web applications.',
           imgSrc: require('../assets/images/FHTL.png'),
           transition: 'fade-right',
         },
