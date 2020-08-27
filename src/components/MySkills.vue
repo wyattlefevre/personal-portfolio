@@ -3,19 +3,17 @@
     <section-header text="Skills" />
     <div class="icons">
       <v-container fluid>
-        <v-row justify="center" align="center">
-          <v-col
-            v-for="s in skills"
-            :key="s.name"
-            sm="6"
-            cols="12"
-            md="5"
-            lg="3"
-            class="text-center"
-          >
-            <div class="skill" :data-aos="s.transition">
-              <img :src="s.iconSrc" width="200px" />
-              <h1 class="display-1">{{ s.name }}</h1>
+        <v-row>
+          <v-col>
+            <div>
+              <v-row justify="center" align="center">
+                <v-col v-for="s in skills" :key="s.name" sm="6" cols="12" md="5" lg="3" class="text-center">
+                  <div class="skill" :data-aos="s.transition">
+                    <img :src="s.iconSrc" width="200px" />
+                    <h1 class="display-1">{{ s.name }}</h1>
+                  </div>
+                </v-col>
+              </v-row>
             </div>
           </v-col>
         </v-row>

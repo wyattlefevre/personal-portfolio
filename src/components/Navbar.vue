@@ -3,7 +3,6 @@
     <v-app-bar
       flat
       fixed
-      dense
       color="#1f1f1f"
       inverted-scroll
       :scroll-threshold="windowHeight - 20"
@@ -20,12 +19,17 @@
       <v-spacer></v-spacer>
       <v-hover v-slot:default="{ hover }" close-delay="200">
         <v-btn icon href="https://github.com/wyattlefevre">
-          <v-icon size="2em" :color="hover ? 'accent' : 'white'">mdi-github</v-icon>
+          <v-icon size="2.5em" :color="hover ? 'accent' : 'white'">mdi-github</v-icon>
         </v-btn>
       </v-hover>
       <v-hover v-slot:default="{ hover }" close-delay="200">
         <v-btn icon href="https://www.linkedin.com/in/wyatt-lefevre-a22b261a6/">
-          <v-icon size="2em" :color="hover ? 'accent' : 'white'">mdi-linkedin</v-icon>
+          <v-icon size="2.5em" :color="hover ? 'accent' : 'white'">mdi-linkedin</v-icon>
+        </v-btn>
+      </v-hover>
+      <v-hover v-slot:default="{ hover }" close-delay="200">
+        <v-btn icon>
+          <v-icon size="2.5em" :color="hover ? 'accent' : 'white'" @click="$emit('email'); drawer = false;">mdi-email</v-icon>
         </v-btn>
       </v-hover>
     </v-app-bar>

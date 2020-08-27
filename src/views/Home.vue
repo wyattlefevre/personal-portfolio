@@ -7,6 +7,7 @@
       @goToSkills="goToSkills"
       @goToProjects="goToProjects"
       @goToContact="goToContact"
+      @email="goToContact(); showEmail=!showEmail;"
     />
 
     <landing-banner @goToAbout="goToAbout" />
@@ -17,9 +18,9 @@
 
     <my-skills @goToProjects="goToProjects" :skills="skills" />
 
-    <my-projects @goToContact="goToContact" :projects="projects" />
+    <my-projects @goToTop="goToTop" @goToContact="goToContact" :projects="projects" />
 
-    <contact-me />
+    <contact-me @hide-email="showEmail = !showEmail" :showEmail="showEmail"/>
     <!-- <div class="footer">
       <p>
         Many of the icons i use are from
@@ -54,41 +55,42 @@ export default {
   },
   data() {
     return {
+      showEmail: false,
       projects: [
         {
-          name: 'Photo Site',
-          description: 'Description 1',
-          imgSrc: require('../assets/images/project1.jpg'),
+          name: 'Portfolio Site',
+          description: 'This is my personal portfolio website. It is a static web page built using vue and vuetify.',
+          demo: 'https://wyattlefevre.com/',
+          github: 'https://github.com/wyattlefevre/personal-portfolio',
+          imgSrc: require('../assets/images/projects/portfolio-site.png'),
           transition: 'fade-right',
-          color: '#bb86fc',
+          color: 'black',
+          whiteTitle: true,
+          whiteDescription: true,
         },
         {
-          name: 'Bug Tracker',
-          description: 'Description 1',
-          imgSrc: require('../assets/images/project1.jpg'),
+          name: 'Photo Share',
+          description:
+            'A full stack photo sharing application with users, authentication, file uploads and a clean design. This ap uses vue.js and vuetify on the front end, node.js with express for the api, and mongodb on the back end.',
+          demo: 'https://photoshare.wyattlefevre.com/',
+          github: 'https://github.com/wyattlefevre/photo-share',
+          imgSrc: require('../assets/images/projects/photo-share.png'),
           transition: 'fade-right',
-          color: 'red',
+          color: '#1976D2',
+          whiteTitle: true,
+          whiteDescription: true,
         },
         {
-          name: 'To Do List',
-          description: 'Description 1',
-          imgSrc: require('../assets/images/project1.jpg'),
+          name: 'Ticket System',
+          description:
+            'This full stack web application features a clean and simple front end built with vue and vuetify. The back end uses node/express and mongodb.',
+          demo: 'https://ticketsystem.wyattlefevre.com/',
+          github: 'https://github.com/wyattlefevre/ticket-system',
+          imgSrc: require('../assets/images/projects/ticket-system.png'),
           transition: 'fade-right',
-          color: 'purple',
-        },
-        {
-          name: 'Time Tracker',
-          description: 'Description 1',
-          imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-right',
-          color: 'yellow',
-        },
-        {
-          name: 'Your Mom',
-          description: 'Description 1',
-          imgSrc: require('../assets/images/project1.jpg'),
-          transition: 'fade-right',
-          color: 'yellow',
+          color: '#9a6bb3',
+          whiteTitle: true,
+          whiteDescription: true,
         },
       ],
       experiences: [
@@ -101,19 +103,22 @@ export default {
         },
         {
           name: 'LSIT',
-          description: 'I currently work in a team as a full-stack web developer for the IT Department of the College of Life Sciences at BYU.',
+          description:
+            'I currently work in a team as a full-stack web developer for the IT Department of the College of Life Sciences at BYU.',
           imgSrc: require('../assets/images/LSIT.png'),
           transition: 'fade-right',
         },
         {
           name: 'FHTL',
-          description: 'I previously worked as an undergrad research assistant for the Family History Technology Lab at BYU where I worked with other students and professors to create interesting web applications.',
+          description:
+            'I previously worked as an undergrad research assistant for the Family History Technology Lab at BYU where I worked with other students and professors to create interesting web applications.',
           imgSrc: require('../assets/images/FHTL.png'),
           transition: 'fade-right',
         },
         {
           name: 'Teaching Assistant',
-          description: 'I was a TA for the "introduction to object-oriented programming" course at BYU. I helped hundreds of students through their projects in the C++ programming language. I received an average five-star rating from students when surveyed and solidified a strong knowledge of the fundamentals of programming.',
+          description:
+            'I was a TA for the "introduction to object-oriented programming" course at BYU. I helped hundreds of students through their projects in the C++ programming language. I received an average five-star rating from students when surveyed and solidified a strong knowledge of the fundamentals of programming.',
           imgSrc: require('../assets/images/CPMS.png'),
           transition: 'fade-right',
         },
@@ -193,6 +198,10 @@ export default {
     },
   },
   methods: {
+    goToTop(){
+      this.$vuetify.goTo('.landing-banner');
+      this.drawer = false;
+    },
     goToAbout() {
       this.$vuetify.goTo('.about-me');
       this.drawer = false;
